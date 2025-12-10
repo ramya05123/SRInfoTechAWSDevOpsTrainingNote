@@ -7196,3 +7196,199 @@ http://54.218.133.244:8080/onlinebookstore/
 
 
 
+09/12/2025::
+==============
+
+ Docker Introductions::
+=================
+
+Docker is an opensource & Applicatuions level virtualization technology and it's called containirazition.
+
+Docker is an open-source platform that automates the deployment, scaling, and management of applications in lightweight, portable containers. Containers are isolated environments that package an application and all its dependencies (such as libraries, binaries, and configurations) to ensure it runs uniformly across different computing environments.
+
+<img width="1162" height="449" alt="image" src="https://github.com/user-attachments/assets/6f4d8e0c-cc94-4210-84be-f7d7898aad1d" />
+
+
+Docker is a platform and that make it easier to create, deploy, and run applications using containers. Containers are lightweight, standalone, and executable units that include everything needed to run a piece of software, including the code, runtime, libraries, and system tools.
+
+
+container ::
+==============
+1.container is an insolation area of executuions of your applications
+ OR
+ instance of images are called containers
+2.Containers are created from “images”
+3. Containers are the core of Docker. They are lightweight, portable, and isolated environments where applications run.
+  Docker is run your software packages /Applications  in containers called containarizations.
+
+4. if you build a docker container for your application called containerization
+5. containers have it’s own boundaries  
+
+who will create containers?
+Ans --docker images are created the containers
+
+ Docker Images:
+ ===============
+
+ docker image is a package with all dependencies and the necessary 
+information to create the container and docker image derived from multiple base images.
+
+An image is a snapshot of a container, a blueprint that defines what the container will contain and how it will behave when run. It consists of an application and its dependencies. Docker images are built using a Dockerfile
+
+Docker Registry::
+====================
+
+A Docker Registry is a system for storing and distributing Docker images. It is a centralized location where Docker images can be uploaded (pushed), stored, and downloaded (pulled) by users and applications. Docker images are the building blocks of containers, and registries provide a way to manage, version, and share these images across different environments.
+
+Default registry :: https://hub.docker.com/
+
+Physical & Virtual & Hypervisors/VMwares::
+=============================================
+
+1.tomcat & nodejs containers have it’s own process tree,own files systems,own network interfaces own storage,ram…etc
+2.when you want to give application to your team/testers  docker is the best choice and when you want give system to your team/ testers VMwares are best choice.
+3.application level virtulization docker is the best choice and OS level virtulization VMwares are best choice
+4.individually scale the your application very easy in docker
+
+<img width="1162" height="449" alt="image" src="https://github.com/user-attachments/assets/05494c3a-210c-4a65-a07e-59f6170d17cf" />
+
+
+
+Example:: For festival season In your organization leave management application multiple employees are applied leaves at the same time in that scenario docker is very easy to scale the one more application but physically it’s very difficult so docker is the best choice
+
+
+<img width="1162" height="449" alt="image" src="https://github.com/user-attachments/assets/4645b5bb-9c8f-485c-b2d2-bcf8a2c34fbb" />
+
+
+
+
+Install Docker in Ubuntu machine::
+=====================================
+
+Please follow below link steps to install the docker in ubuntu and please read all the content in that link
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04
+
+once installed docker please verify below commands::
+
+>docker --version
+
+root@ip-172-31-20-86:~# docker --version
+Docker version 28.0.4, build b8034c0
+
+root@ip-172-31-20-86:~# docker info
+Client: Docker Engine - Community
+ Version:    28.0.4
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.22.0
+    Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+  compose: Docker Compose (Docker Inc.)
+    Version:  v2.34.0
+    Path:     /usr/libexec/docker/cli-plugins/docker-compose
+
+Server:
+ Containers: 0
+  Running: 0
+  Paused: 0
+  Stopped: 0
+ Images: 0
+ Server Version: 28.0.4
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Using metacopy: false
+  Native Overlay Diff: true
+  userxattr: false
+ Logging Driver: json-file
+ Cgroup Driver: systemd
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: 05044ec0a9a75232cad458027ca83437aae3f4da
+ runc version: v1.2.5-0-g59923ef
+ init version: de40ad0
+ Security Options:
+  apparmor
+  seccomp
+   Profile: builtin
+  cgroupns
+ Kernel Version: 6.8.0-1024-aws
+ Operating System: Ubuntu 24.04.2 LTS
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 2
+ Total Memory: 3.82GiB
+ Name: ip-172-31-20-86
+ ID: 201c6f4b-75d3-4326-adf5-00b9a82a8d4d
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Experimental: false
+ Insecure Registries:
+  ::1/128
+  127.0.0.0/8
+ Live Restore Enabled: false
+
+if above page is came without any erros, it means docker is installed in your machine
+
+
+Docker High Level Client -Server Architecture::
+==================================
+
+
+<img width="1700" height="665" alt="image" src="https://github.com/user-attachments/assets/0c95b9d4-34ac-4795-aa30-addb1952b6a3" />
+
+
+
+Docker's high-level architecture revolves around several components that work together to provide containerization and isolation for applications
+
+
+Docker Client (CLI)::
+=================
+
+The Docker Client is the primary interface for interacting with Docker. It can be a command-line interface (CLI), like the docker command, or a graphical interface (GUI) in some tools.
+
+It allows users to interact with Docker's features, such as building containers, running containers, and managing containers and images.
+
+It sends requests to the Docker Daemon to execute commands.
+
+Docker Daemon (Dockerd)::
+====================
+
+The Docker Daemon (also known as dockerd) is the core component of Docker. It runs in the background on the host system.
+
+The daemon is responsible for managing Docker containers, images, networks, and volumes. It listens for Docker API requests and handles container lifecycle operations such as starting, stopping, and building containers.
+
+The Docker Daemon can communicate with multiple Docker clients, allowing for distributed management of containers.
+
+Flow:
+============
+1.The Docker Client sends a command to the Docker Daemon.
+
+2.The Docker Daemon interacts with containers, images, and storage volumes.
+
+3.The Docker Daemon can pull images from a Docker Registry.
+
+4.The Docker Daemon runs containers based on the images and handles networking and storage.
+
+Docker commands::
+====================
+
+ >docker pull <imagename>
+
+ >docker pull hello-world
+
+ >docker images   ----used to display the all images
+
+ > docker image ls ----used to display the all images
+ 
+ >docker run ---used to build the images and create the container
+
