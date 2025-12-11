@@ -8391,6 +8391,9 @@ client_loop: send disconnect: Connection reset by peer
 Application up & running::
 =============================
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/03d89434-a183-4a0e-8733-2f1dc4d65cef" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/18056593-c77f-47a6-b1e2-f80270c44726" />
+
 
 
