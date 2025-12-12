@@ -8539,3 +8539,9 @@ is a tool for interacting with your existing cluster.
 Kubelet: 
 ============
 An agent that ensures the containers in the pods are running and check healthy.
+
+
+kube-proxy::
+==============
+
+is a core Kubernetes network component that runs on every node. It makes Services work by managing how traffic is routed to Pods.
